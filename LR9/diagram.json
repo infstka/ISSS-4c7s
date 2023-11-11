@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 294.6, "left": -160.4, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 87, "left": -183, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 378.65,
+      "left": -97.4,
+      "rotate": 180,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": 194.6,
+      "left": 105,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "bb1:5t.d", "uno:5V", "green", [ "v-48", "h76.8" ] ],
+    [ "ntc1:OUT", "bb1:11t.b", "green", [ "v95.9", "h-278.4" ] ],
+    [ "ntc1:GND", "bb1:13t.b", "black", [ "h19.2", "v134.4", "h-278.4" ] ],
+    [ "bb1:11t.c", "uno:A0", "green", [ "h-9.6", "v-38.4", "h73" ] ],
+    [ "bb1:13t.c", "uno:GND.1", "green", [ "v38.4", "h-134.4", "v-316.8", "h86.1" ] ],
+    [ "r1:1", "bb1:11t.e", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:5t.e", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}

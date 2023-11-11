@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 294.6, "left": -170, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 67.8, "left": -173.4, "attrs": {} },
+    { "type": "wokwi-rgb-led", "id": "rgb1", "top": 301.6, "left": -56.5, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 388.8,
+      "left": -77.35,
+      "rotate": 270,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 387.4,
+      "left": -58.45,
+      "rotate": 270,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 388.8,
+      "left": -48.55,
+      "rotate": 270,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "bb1:11b.h", "uno:9", "green", [ "v28.8", "h201.6", "v-412.8", "h-164" ] ],
+    [ "bb1:13b.h", "uno:10", "green", [ "v38.4", "h192", "v-432", "h-183.1" ] ],
+    [ "bb1:14b.h", "uno:11", "green", [ "v48", "h192", "v-451.2", "h-202.2" ] ],
+    [ "bb1:12t.e", "uno:5V", "green", [ "v86.4", "h-124.8", "v-172.8", "h153.6" ] ],
+    [ "rgb1:R", "bb1:11t.a", "", [ "$bb" ] ],
+    [ "rgb1:COM", "bb1:12t.b", "", [ "$bb" ] ],
+    [ "rgb1:G", "bb1:13t.a", "", [ "$bb" ] ],
+    [ "rgb1:B", "bb1:14t.a", "", [ "$bb" ] ],
+    [ "r1:1", "bb1:11b.g", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:11t.c", "", [ "$bb" ] ],
+    [ "r3:1", "bb1:14b.g", "", [ "$bb" ] ],
+    [ "r3:2", "bb1:14t.c", "", [ "$bb" ] ],
+    [ "r2:1", "bb1:13b.g", "", [ "$bb" ] ],
+    [ "r2:2", "bb1:13t.c", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
